@@ -1,65 +1,170 @@
-<!--  ----------------------------------------------------------------------  -->
-<!--  NOTE: Please add the following <META> element to your page <HEAD>.      -->
-<!--  If necessary, please modify the charset parameter to specify the        -->
-<!--  character set of your HTML page.                                        -->
-<!--  ----------------------------------------------------------------------  -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mantel Group's Lead Form</title>
+  <!--  ----------------------------------------------------------------------  -->
+  <!--  NOTE: Please add the following <META> element to your page <HEAD>.      -->
+  <!--  If necessary, please modify the charset parameter to specify the        -->
+  <!--  character set of your HTML page.                                        -->
+  <!--  ----------------------------------------------------------------------  -->
 
-<META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
+  <META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
   <script src="https://www.google.com/recaptcha/api.js"></script>
   <script>
    function timestamp() { var response = document.getElementById("g-recaptcha-response"); if (response == null || response.value.trim() == "") {var elems = JSON.parse(document.getElementsByName("captcha_settings")[0].value);elems["ts"] = JSON.stringify(new Date().getTime());document.getElementsByName("captcha_settings")[0].value = JSON.stringify(elems); } } setInterval(timestamp, 500); 
   </script>
+  <!-- Bootstrap 4.0 -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   
-  <!--  ----------------------------------------------------------------------  -->
-  <!--  NOTE: Please add the following <FORM> element to your page.             -->
-  <!--  ----------------------------------------------------------------------  -->
-  
-  <form action="https://test.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
-  
-  <input type=hidden name='captcha_settings' value='{"keyname":"Webtolead","fallback":"true","orgId":"00D1e0000008loi","ts":""}'>
-  <input type=hidden name="oid" value="00D1e0000008loi">
-  <input type=hidden name="retURL" value="http://google.com">
-  
-  <!--  ----------------------------------------------------------------------  -->
-  <!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
-  <!--  these lines if you wish to test in debug mode.                          -->
-  <!--  <input type="hidden" name="debug" value=1>                              -->
-  <!--  <input type="hidden" name="debugEmail" value="mustafa@httpeak.com">     -->
-  <!--  ----------------------------------------------------------------------  -->
-  
-  <label for="first_name">First Name</label><input  id="first_name" maxlength="40" name="first_name" size="20" type="text" /><br>
-  
-  <label for="last_name">Last Name</label><input  id="last_name" maxlength="80" name="last_name" size="20" type="text" /><br>
-  
-  <label for="email">Email</label><input  id="email" maxlength="80" name="email" size="20" type="text" /><br>
-  
-  <label for="company">Company</label><input  id="company" maxlength="40" name="company" size="20" type="text" /><br>
-  
-  <label for="lead_source">Lead Source</label><select  id="lead_source" name="lead_source"><option value="">--None--</option><option value="Advertisement">Advertisement</option>
-  <option value="Employee Referral">Employee Referral</option>
-  <option value="External Referral">External Referral</option>
-  <option value="Partner">Partner</option>
-  <option value="Public Relations">Public Relations</option>
-  <option value="Seminar - Internal">Seminar - Internal</option>
-  <option value="Seminar - Partner">Seminar - Partner</option>
-  <option value="Trade Show">Trade Show</option>
-  <option value="Web">Web</option>
-  <option value="Word of mouth">Word of mouth</option>
-  <option value="Other">Other</option>
-  <option value="OK Google What&#39;s Next">OK Google What&#39;s Next</option>
-  <option value="OK Google What&#39;s Next - DNA">OK Google What&#39;s Next - DNA</option>
-  <option value="Google Summit 2019">Google Summit 2019</option>
-  <option value="KIM Campaign">KIM Campaign</option>
-  </select><br>
-  
-  <label for="phone">Phone</label><input  id="phone" maxlength="40" name="phone" size="20" type="text" /><br>
-  
-  <label for="url">Website</label><input  id="url" maxlength="80" name="url" size="20" type="text" /><br>
-  
-  <label for="title">Title</label><input  id="title" maxlength="40" name="title" size="20" type="text" /><br>
-  
-  <div class="g-recaptcha" data-sitekey="6LcJ4YUaAAAAAGE_Rxgl38fNh2o8n7yc5Yl4_XNF"></div><br>
-  <input type="submit" name="submit">
-  
-  </form>
-  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <!-- CSS -->
+  <style type="text/css">
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: #f2f2f2;
+    }
+    .wrapper {
+      width: 50%;
+      background: #fff;
+      border: 2px solid #ddd;
+      border-radius: 20px;
+      margin: 0 auto;
+      margin-top: 100px;
+      margin-bottom: 100px;
+      padding: 40px 0px;
+    }
+    .header {
+      margin-top: 50px;
+      margin-bottom: 80px;
+      text-align: center;
+    }
+    .header .h1{
+      margin-top: 40px;
+      color: #1e5e82;
+      font-weight: 700;
+    }
+    @media (max-width: 991.98px) {
+      .wrapper {
+        width: 70%;
+      }
+    }
+    @media (max-width: 767.98px) {
+      .wrapper {
+        width: 80%;
+        margin-top: 75px;
+        margin-bottom: 75px;
+      }
+
+      .main-forms #inputs {
+        padding: 10px 30px;
+      }
+    }
+  </style>
+</head>
+  <body>
+    <div class="wrapper">
+      <!-- Header i.e logo -->
+      
+      <div class="container">
+        <div class="row justify-content-center header">
+            <div class="col-sm-10">
+              <img src="mantel-logo.png" alt="Mantel Group" width="200">
+              <p class="h1">Web To Lead Form</p>
+            </div>
+        </div>
+      </div>
+      <!--  ----------------------------------------------------------------------  -->
+      <!--  NOTE: Please add the following <FORM> element to your page.             -->
+      <!--  ----------------------------------------------------------------------  -->
+      <div class="container">
+        <div class="row justify-content-center main-form">
+          <div class="col-sm-10" id="inputs">
+            <form action="https://test.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
+            <input type=hidden name='captcha_settings' value='{"keyname":"Webtolead","fallback":"true","orgId":"00D1e0000008loi","ts":""}'>
+            <input type=hidden name="oid" value="00D1e0000008loi">
+            <input type=hidden name="retURL" value="http://google.com">
+            
+            <!--  ----------------------------------------------------------------------  -->
+            <!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
+            <!--  these lines if you wish to test in debug mode.                          -->
+            <!--  <input type="hidden" name="debug" value=1>                              -->
+            <!--  <input type="hidden" name="debugEmail" value="mustafa@httpeak.com">     -->
+            <!--  ----------------------------------------------------------------------  -->
+            <div class="form-group">
+              <label for="first_name">First Name*</label>
+              <input type="text" class="form-control" id="first_name" placeholder="i.e John" maxlength="40" name="first_name" required="true" />
+            </div>
+            <div class="form-group"> 
+              <label for="last_name">Last Name*</label>
+              <input type="text" class="form-control" id="last_name" placeholder="i.e Smith" maxlength="40" name="last_name" required="true"/>
+            </div>
+            <div class="form-group"> 
+              <label for="email">Email*</label>
+              <input type="email" class="form-control" id="email" placeholder="johnsmith@gmail.com" maxlength="80" name="email" required="true"/>
+            </div>
+            <div class="form-group">
+              <label for="company">Company</label>
+              <input type="text" class="form-control" id="company" placeholder="Smith Corporations" maxlength="40" name="company"/>
+            </div>
+            <div class="form-group">
+              <label for="lead_source">Lead Source*</label>
+              <select class="form-control" id="lead_source" required="true">
+                <option value="">--None--</option><option value="Advertisement">Advertisement</option>
+                <option value="Employee Referral">Employee Referral</option>
+                <option value="External Referral">External Referral</option>
+                <option value="Partner">Partner</option>
+                <option value="Public Relations">Public Relations</option>
+                <option value="Seminar - Internal">Seminar - Internal</option>
+                <option value="Seminar - Partner">Seminar - Partner</option>
+                <option value="Trade Show">Trade Show</option>
+                <option value="Web">Web</option>
+                <option value="Word of mouth">Word of mouth</option>
+                <option value="Other">Other</option>
+                <option value="OK Google What&#39;s Next">OK Google What&#39;s Next</option>
+                <option value="OK Google What&#39;s Next - DNA">OK Google What&#39;s Next - DNA</option>
+                <option value="Google Summit 2019">Google Summit 2019</option>
+                <option value="KIM Campaign">KIM Campaign</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone</label>
+              <input type="text" class="form-control" id="phone" placeholder="012 345 678 12" name="phone" maxlength="40" size="20"/>
+            </div>
+            <div class="form-group">
+              <label for="url">Website</label>
+              <input type="text" class="form-control" id="url" placeholder="wwww.smithscorporation.com" name="url" maxlength="80" size="20"/>
+            </div>
+            <div class="form-group">
+              <label for="title">Title</label>
+              <input type="text" class="form-control" id="title" placeholder="John Smith" name="title" maxlength="80" size="20"/>
+            </div>
+            <div class="form-group">
+              <div class="g-recaptcha" data-sitekey="6LcJ4YUaAAAAAGE_Rxgl38fNh2o8n7yc5Yl4_XNF" data-callback="correctCaptcha"></div>
+              <script type="text/javascript" src="https://www.google.com/recaptcha/api.js?hl=en"></script>
+            </div>
+            <div class="alert alert-light" role="alert">
+              All the collected information is securely stored. We do no share your data with third party.
+            </div>
+            <button type="submit"class="btn btn-primary" name="submit" >Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script type="text/javascript">
+    $("form").each(function() {
+        $(this).find(':button[type="submit"]').prop('disabled', true);
+    });
+    function correctCaptcha() {
+        $("form").each(function() {
+            $(this).find(':button[type="submit"]').prop('disabled', false);
+        });
+    }
+  </script>
+</html>
