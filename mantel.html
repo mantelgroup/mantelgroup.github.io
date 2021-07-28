@@ -1,7 +1,6 @@
 <form action="https://test.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
 	<input type=hidden name="oid" value="00D1e0000008loi">
 	<input type=hidden name="retURL" value="http://google.com"> <!-- change it to the page where user should land after submitting -->
-	
 	<label for="first_name">First Name</label>
 	<input  id="first_name" maxlength="40" name="first_name" size="20" type="text" required="true" />
 	<br>
@@ -9,7 +8,7 @@
 	<input  id="last_name" maxlength="80" name="last_name" size="20" type="text" required="true" />
 	<br>
 	<label for="email">Email</label>
-	<input  id="email" maxlength="80" name="email" size="20" type="text"required="true"  />
+	<input  id="email" maxlength="80" name="email" size="20" type="text" required="true" />
 	<br>
 	<label for="company">Company</label>
 	<input  id="company" maxlength="40" name="company" size="20" type="text" />
@@ -17,9 +16,18 @@
 	<label for="phone">Phone</label>
 	<input  id="phone" maxlength="40" name="phone" size="20" type="text" />
 	<br>
-	<label for="message">Message:</label>
-	<textarea  id="message" name="00N1e00000CtLp3" type="text" rows="5" wrap="soft"></textarea>
+	<label for="enquiry">Enquiry Type:</label>
+	<select  id="enquiry" name="00N1e00000CtKrS" title="Enquiry Type" required="true" >
+		<option value="">--None--</option>
+		<option value="I&#39;m interested in Mantel Groups services">I&#39;m interested in Mantel Groups services</option>
+		<option value="I&#39;d like to know more about working at Mantel Group">I&#39;d like to know more about working at Mantel Group</option>
+		<option value="I have a news or media enquiry">I have a news or media enquiry</option>
+		<option value="I have a question about something else">I have a question about something else</option>
+	</select>
 	<br>
-	<input type="hidden" id="lead_source" name="lead_source" value="cmd">  <!-- Don't touch this line -->
+	<label for="message">Message:</label>
+	<textarea  id="message" name="00N1e00000CtLp3" type="text" rows="5" wrap="soft" required="true" ></textarea>
+	<br>
+	<input type="hidden" id="lead_source" name="lead_source" value="mantel"> <!-- Don't touch this line -->
 	<input type="submit" name="submit">
 </form>

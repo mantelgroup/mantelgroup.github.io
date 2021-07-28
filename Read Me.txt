@@ -1,0 +1,10 @@
+Hey,
+
+It contains the forms for each BU. Forms are currently in its basic state. It can be designed according to your requirement.
+
+We noticed that the websites are based on WordPress CRM. It's possible that you've used a plugin for creatinng
+contact forms. However, the lead forms that we've created need to be implemented manually in the website with the custom code.
+What you can do now is clone the contact page and replace the form section with the one we've provided and design it accordingly.
+By this, rest of the page will remain unaffected. However, this will not store the contact entries in wordpress. As it is
+no longer linked to the plugin and works standalone. But, you can further do some coding to manually enter the contact 
+entries in Wordpress DB upon form submission. Totally upto you.
