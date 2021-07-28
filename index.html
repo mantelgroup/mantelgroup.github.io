@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Kasna Lead Form</title>
+  <title>Mantel Group's Lead Form</title>
   <!--  ----------------------------------------------------------------------  -->
   <!--  NOTE: Please add the following <META> element to your page <HEAD>.      -->
   <!--  If necessary, please modify the charset parameter to specify the        -->
@@ -41,15 +41,13 @@
       padding: 40px 0px;
     }
     .header {
-      padding-top: 50px;
-      padding-bottom: 20px;
+      margin-top: 50px;
       margin-bottom: 80px;
       text-align: center;
-      border-bottom: 2px solid #ddd;
     }
     .header .h1{
       margin-top: 40px;
-      color: #243a8e;
+      color: #1e5e82;
       font-weight: 700;
     }
 
@@ -88,7 +86,7 @@
       <div class="container">
         <div class="row justify-content-center header">
             <div class="col-sm-10">
-              <img src="images/kasna-logo.png" alt="Azenix" width="200">
+              <img src="images/mantel-logo.png" alt="Azenix" width="200">
               <p class="h1">Web To Lead Form</p>
             </div>
         </div>
@@ -102,7 +100,7 @@
             <form action="https://test.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
             <input type="hidden" name='captcha_settings' value='{"keyname":"Webtolead","fallback":"true","orgId":"00D1e0000008loi","ts":""}'>
             <input type="hidden" name="oid" value="00D1e0000008loi">
-            <input type="hidden" name="retURL" value="https://mantelgroup.github.io/kasna.html?thankyou=yes">
+            <input type="hidden" name="retURL" value="https://mantelgroup.github.io/index.html?thankyou=yes">
             
             
             <!--  ----------------------------------------------------------------------  -->
@@ -124,53 +122,35 @@
               <input type="email" class="form-control" id="email" maxlength="80" name="email" required="true"/>
             </div>
             <div class="form-group">
-              <label for="company">Organization</label>
+              <label for="company">Company</label>
               <input type="text" class="form-control" id="company" maxlength="40" name="company"/>
             </div>
             <div class="form-group lead_source">
-              <!-- <label for="lead_source">Lead Source*</label> 
+              <!-- <label for="lead_source">Lead Source*</label>
               <select class="form-control" id="lead_source" name="lead_source" required="true">
                 <option value="">--None--</option>
                 <option value="kasna">kasna</option>
-                <option value="cmd">cmd</option>  -->
-                <input type="hidden" class="form-control" id="lead_source" name="lead_source" value="kasna">
-              </select>
+                <option value="cmd">cmd</option>
+              </select> -->
+                <input type="hidden" class="form-control" id="lead_source" name="lead_source" value="mantel">
             </div>
             <div class="form-group">
               <label for="phone">Phone</label>
               <input type="text" class="form-control" id="phone" name="phone" maxlength="40" size="20"/>
             </div>
             <div class="form-group">
-              <label for="role">Role</label>
-              <select class="form-control" id="role" name="00N1e00000CtKdB" title="Role">
+              <label for="enquiry">Enquiry Type:*</label>
+              <select class="form-control" id="enquiry" name="00N1e00000CtKrS" title="Enquiry Type" required="true" >
                 <option value="">--None--</option>
-                <option value="CIO/CTO">CIO/CTO</option>
-                <option value="Other C-Suite">Other C-Suite</option>
-                <option value="Senior IT Manager">Senior IT Manager</option>
-                <option value="Business Manager">Business Manager</option>
-                <option value="IT implementation Manager">IT implementation Manager</option>
-                <option value="Other IT Roles">Other IT Roles</option>
-                <option value="Other">Other</option>
+                <option value="I&#39;m interested in Mantel Groups services">I&#39;m interested in Mantel Groups services</option>
+                <option value="I&#39;d like to know more about working at Mantel Group">I&#39;d like to know more about working at Mantel Group</option>
+                <option value="I have a news or media enquiry">I have a news or media enquiry</option>
+                <option value="I have a question about something else">I have a question about something else</option>
               </select>
             </div>
             <div class="form-group">
-              <label for="enquiry_reason">Reason For Enquiry:*</label>
-              <select class="form-control" id="enquiry_reason" name="00N1e00000CtLM1" title="Reason For Enquiry" required="true" >
-                <option value="">--None--</option>
-                <option value="Careers">Careers</option>
-                <option value="Training">Training</option>
-                <option value="IT Project">IT Project</option>
-                <option value="Advice">Advice</option>
-                <option value="Other">Other</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="subject">Subject</label>
-              <input class="form-control" id="subject" maxlength="255" name="00N1e00000CtLfm" size="20" type="text" />
-            </div>
-            <div class="form-group">
-              <label for="message">Message</label>
-              <textarea class="form-control" id="message" name="00N1e00000CtLp3" type="text" rows="5" wrap="soft"></textarea>
+              <label for="message">Message*</label>
+              <textarea class="form-control" id="message" name="00N1e00000CtLp3" type="text" rows="5" wrap="soft" required="true" ></textarea>
             </div>
             <div class="form-group">
               <div class="g-recaptcha" data-sitekey="6LcJ4YUaAAAAAGE_Rxgl38fNh2o8n7yc5Yl4_XNF" data-callback="correctCaptcha"></div>
