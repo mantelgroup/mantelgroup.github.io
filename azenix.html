@@ -1,203 +1,176 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Azenix Lead Form</title>
-  <!--  ----------------------------------------------------------------------  -->
-  <!--  NOTE: Please add the following <META> element to your page <HEAD>.      -->
-  <!--  If necessary, please modify the charset parameter to specify the        -->
-  <!--  character set of your HTML page.                                        -->
-  <!--  ----------------------------------------------------------------------  -->
- 
-  <META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
-  <script src="https://www.google.com/recaptcha/api.js"></script>
-  <script>
-   function timestamp() { var response = document.getElementById("g-recaptcha-response"); if (response == null || response.value.trim() == "") {var elems = JSON.parse(document.getElementsByName("captcha_settings")[0].value);elems["ts"] = JSON.stringify(new Date().getTime());document.getElementsByName("captcha_settings")[0].value = JSON.stringify(elems); } } setInterval(timestamp, 500); 
-  </script>
-  <!-- Bootstrap 4.0 -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
- 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-  <!-- CSS -->
-  <style type="text/css">
-    body {
-      font-family: 'Roboto', sans-serif;
-      background: #f2f2f2;
-    }
-    
-    .wrapper {
-      width: 50%;
-      background: #fff;
-      border: 2px solid #ddd;
-      border-radius: 20px;
-      margin: 0 auto;
-      margin-top: 100px;
-      margin-bottom: 100px;
-      padding: 0px 0px 40px 0px;
-    }
-    .header {
-      padding-top: 50px;
-      padding-bottom: 20px;
-      margin-bottom: 80px;
-      text-align: center;
-      background: #010028;
-      border-radius: 20px 20px 0px 0px;
-      border-bottom: 2px solid #777;
-    }
-    .header .h1{
-      margin-top: 40px;
-      color: #fff;
-      font-weight: 700;
-    }
-
-    .divthanksyou{
-      text-align: center;
-    }
-
-    .lead_source {
-      display: none;
-    }
-    @media (max-width: 991.98px) {
-      .wrapper {
-        width: 70%;
-      }
-    }
-    @media (max-width: 767.98px) {
-      .wrapper {
-        width: 80%;
-        margin-top: 75px;
-        margin-bottom: 75px;
-      }
- 
-      .main-forms #inputs {
-        padding: 10px 30px;
-      }
-    }
-  </style>
-</head>
-  <body>
-    <div id="divthanksyou" class="divthanksyou alert alert-success">
-      <strong>Thank you!</strong> Your request was submitted successfully
-    </div>
-    <div class="wrapper">
-      <!-- Header i.e logo -->
-      
-      <div class="container">
-        <div class="row justify-content-center header">
-            <div class="col-sm-10">
-              <img src="images/azenix-logo.png" alt="Azenix" width="200">
-              <p class="h1">Web To Lead Form</p>
-            </div>
-        </div>
-      </div>
-      <!--  ----------------------------------------------------------------------  -->
-      <!--  NOTE: Please add the following <FORM> element to your page.             -->
-      <!--  ----------------------------------------------------------------------  -->
-      <div class="container">
-        <div class="row justify-content-center main-form">
-          <div class="col-sm-10" id="inputs">
-            <form action="https://test.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
-            <input type="hidden" name='captcha_settings' value='{"keyname":"Webtolead","fallback":"true","orgId":"00D1e0000008loi","ts":""}'>
-            <input type="hidden" name="oid" value="00D1e0000008loi">
-            <input type="hidden" name="retURL" value="https://mantelgroup.github.io/azenix.html?thankyou=yes">
-            
-            
-            <!--  ----------------------------------------------------------------------  -->
-            <!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
-            <!--  these lines if you wish to test in debug mode.                          -->
-            <!--  <input type="hidden" name="debug" value=1>                              -->
-            <!--  <input type="hidden" name="debugEmail" value="mustafa@httpeak.com">     -->
-            <!--  ----------------------------------------------------------------------  -->
-            <div class="form-group">
-              <label for="first_name">First Name*</label>
-              <input type="text" class="form-control" id="first_name" maxlength="40" name="first_name" required="true" />
-            </div>
-            <div class="form-group"> 
-              <label for="last_name">Last Name*</label>
-              <input type="text" class="form-control" id="last_name" maxlength="40" name="last_name" required="true"/>
-            </div>
-            <div class="form-group"> 
-              <label for="email">Email*</label>
-              <input type="email" class="form-control" id="email" maxlength="80" name="email" required="true"/>
-            </div>
-            <div class="form-group">
-              <label for="company">Company</label>
-              <input type="text" class="form-control" id="company" maxlength="40" name="company"/>
-            </div>
-            <div class="form-group lead_source">
-              <!-- <label for="lead_source">Lead Source*</label> 
-              <select class="form-control" id="lead_source" name="lead_source" required="true">
-                <option value="">--None--</option>
-                <option value="kasna">kasna</option>
-                <option value="cmd">cmd</option>  -->
-                <input type="hidden" class="form-control" id="lead_source" name="lead_source" value="azenix">
-                <input type="hidden" class="form-control" id="00N1e00000DvTtp" name="00N1e00000DvTtp" value="azenix">
-          
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="phone">Mobile</label>
-              <input type="text" class="form-control" id="phone" name="phone" maxlength="40" size="20"/>
-            </div>
-            <div class="form-group">
-              <label for="enquiry_reason">Reason For Enquiry:*</label>
-              <select class="form-control" id="enquiry_reason" name="00N1e00000CtLM1" title="Reason For Enquiry" required="true" >
-                <option value="">--None--</option>
-                <option value="Careers">Careers</option>
-                <option value="Training">Training</option>
-                <option value="IT Project">IT Project</option>
-                <option value="Advice">Advice</option>
-                <option value="Other">Other</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="message">Message</label>
-              <textarea class="form-control" id="message" name="00N1e00000CtLp3" type="text" rows="5" wrap="soft"></textarea>
-            </div>
-            <div class="form-group">
-              <div class="g-recaptcha" data-sitekey="6LcJ4YUaAAAAAGE_Rxgl38fNh2o8n7yc5Yl4_XNF" data-callback="correctCaptcha"></div>
-            </div>
-            <div class="alert alert-light" role="alert">
-              All the collected information is securely stored. We do no share your data with third party.
-            </div>
-            <button type="submit"class="btn btn-primary" name="submit" >Submit</button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-    <script type="text/javascript">
-    var url_string =  window.location.href;
-var url = new URL(url_string);
-var c = url.searchParams.get("thankyou");
-      if(c=="yes"){
-        document.getElementById('divthanksyou').style.display = 'block';
-   
-      }else{
-        document.getElementById('divthanksyou').style.display = 'none';
-   
-      }
-      setTimeout(function() {
-    $('#divthanksyou').fadeOut('slow');
-}, 3000);
-console.log(c);
-     
+    <head>
+        <title>Azenix Lead Form</title>
+        <META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
+        <script>
+            function timestamp() { var response = document.getElementById("g-recaptcha-response"); if (response == null || response.value.trim() == "") {var elems = JSON.parse(document.getElementsByName("captcha_settings")[0].value);elems["ts"] = JSON.stringify(new Date().getTime());document.getElementsByName("captcha_settings")[0].value = JSON.stringify(elems); } } setInterval(timestamp, 500); 
         </script>
-  </body>
-  <script type="text/javascript" src="https://www.google.com/recaptcha/api.js?hl=en"></script>
-  <script type="text/javascript">
-    $("form").each(function() {
-        $(this).find(':button[type="submit"]').prop('disabled', true);
-    });
-    function correctCaptcha() {
-        $("form").each(function() {
-            $(this).find(':button[type="submit"]').prop('disabled', false);
-        });
-    }
-  </script>
+        <!-- Bootstrap 4.0 -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+        <!-- CSS -->
+        <style type="text/css">
+            body {
+            font-family: 'Roboto', sans-serif;
+            background: #f2f2f2;
+            }
+            
+            .wrapper {
+            width: 50%;
+            background: #fff;
+            border: 2px solid #ddd;
+            border-radius: 20px;
+            margin: 0 auto;
+            margin-top: 100px;
+            margin-bottom: 100px;
+            padding: 0px 0px 40px 0px;
+            }
+            .header {
+            padding-top: 50px;
+            padding-bottom: 20px;
+            margin-bottom: 80px;
+            text-align: center;
+            background: #010028;
+            border-radius: 20px 20px 0px 0px;
+            border-bottom: 2px solid #777;
+            }
+            .header .h1{
+            margin-top: 40px;
+            color: #fff;
+            font-weight: 700;
+            }
+        
+            .divthanksyou{
+            text-align: center;
+            }
+        
+            .lead_source {
+            display: none;
+            }
+            @media (max-width: 991.98px) {
+            .wrapper {
+                width: 70%;
+            }
+            }
+            @media (max-width: 767.98px) {
+            .wrapper {
+                width: 80%;
+                margin-top: 75px;
+                margin-bottom: 75px;
+            }
+        
+            .main-forms #inputs {
+                padding: 10px 30px;
+            }
+            }
+        </style>
+    </head>
+    <body>
+        <div id="divthanksyou" class="divthanksyou alert alert-success">
+          <strong>Thank you!</strong> Your request was submitted successfully
+        </div>
+        <div class="wrapper">
+            <!-- Header i.e logo -->
+            <div class="container">
+              <div class="row justify-content-center header">
+                  <div class="col-sm-10">
+                    <img src="images/azenix-logo.png" alt="Azenix" width="200">
+                    <p class="h1">Web To Lead Form</p>
+                  </div>
+              </div>
+            </div>
+            <!-- FORM -->
+            <div class="container">
+                <div class="row justify-content-center main-form">
+                    <div class="col-sm-10" id="inputs">
+                        <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
+                            <input type=hidden name="oid" value="00D7F000002dLPK">
+                            <input type=hidden name="retURL" value="https://mantelgroup.github.io/azenix.html?thankyou=yes">
+                            <div class="form-group">
+                                <label for="first_name">First Name:*</label>
+                                <input type="text" class="form-control" id="first_name" maxlength="40" name="first_name" required="true" />
+                            </div>
+                            <div class="form-group"> 
+                                <label for="last_name">Last Name:*</label>
+                                <input type="text" class="form-control" id="last_name" maxlength="40" name="last_name" required="true"/>
+                            </div>
+                            <div class="form-group"> 
+                                <label for="email">Email:*</label>
+                                <input type="email" class="form-control" id="email" maxlength="80" name="email" required="true"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="company">Company:</label>
+                                <input type="text" class="form-control" id="company" maxlength="40" name="company"/>
+                            </div>
+                            <div class="form-group lead_source">
+                                <input type="hidden" id="lead_source" name="lead_source" value="azenix">
+                                <input type="hidden" id="campaign_name" name="00N7F00000TQTH2" value="azenix">
+                            
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Mobile:</label>
+                                <input type="text" class="form-control" id="phone" name="phone" maxlength="40" size="20"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="enquiry_reason">Reason For Enquiry:*</label>
+                                <select class="form-control" id="enquiry_reason" name="00N7F00000TQTH5" title="Reason For Enquiry" required="true" >
+                                  <option value="">--None--</option>
+                                  <option value="Careers">Careers</option>
+                                  <option value="Training">Training</option>
+                                  <option value="IT Project">IT Project</option>
+                                  <option value="Advice">Advice</option>
+                                  <option value="Other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message:</label>
+                                <textarea class="form-control" id="message" name="00N7F00000TQTH4" type="text" rows="5" wrap="soft"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <div class="g-recaptcha" data-sitekey="6LcJ4YUaAAAAAGE_Rxgl38fNh2o8n7yc5Yl4_XNF" data-callback="correctCaptcha"></div>
+                            </div>
+                            <div class="alert alert-light" role="alert">
+                                All the collected information is securely stored. We do no share your data with third party.
+                            </div>
+                            <button type="submit" class="btn btn-primary" name="submit" >Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- JS -->
+        <script type="text/javascript" src="https://www.google.com/recaptcha/api.js?hl=en"></script>
+        <script type="text/javascript">
+            var url_string =  window.location.href;
+            var url = new URL(url_string);
+            var c = url.searchParams.get("thankyou");
+            if(c=="yes"){
+                document.getElementById('divthanksyou').style.display = 'block';
+        
+            }else{
+                document.getElementById('divthanksyou').style.display = 'none';
+        
+            }
+            setTimeout(function() {
+                $('#divthanksyou').fadeOut('slow');
+            }, 3000);
+
+            $("form").each(function() {
+                $(this).find(':button[type="submit"]').prop('disabled', true);
+            });
+            function correctCaptcha() {
+                $("form").each(function() {
+                    $(this).find(':button[type="submit"]').prop('disabled', false);
+                });
+            }
+        </script>
+    </body>
 </html>
